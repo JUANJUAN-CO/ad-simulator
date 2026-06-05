@@ -1,0 +1,8 @@
+[build]
+  command = "npm run build"
+  publish = "out"
+
+[[redirects]]
+  from = "/campaigns/*"
+  to = "/campaigns/detail.html"
+  status = 200

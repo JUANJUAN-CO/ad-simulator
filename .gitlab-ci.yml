@@ -1,0 +1,21 @@
+# GitLab Pages 自动部署
+# 推送到 jihulab.com 后自动构建并发布
+
+image: node:22
+
+cache:
+  paths:
+    - node_modules/
+
+pages:
+  stage: deploy
+  script:
+    - npm install
+    - npm run build
+    - cp -r out/. public/
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
+    - main
